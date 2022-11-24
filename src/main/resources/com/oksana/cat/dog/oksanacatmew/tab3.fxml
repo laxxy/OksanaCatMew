@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<VBox fx:id="box1" alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.oksana.cat.dog.oksanacatmew.MewMewWoofController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="welcomeText"/>
+
+    <ComboBox fx:id="combo" layoutX="15.0" layoutY="33.0" prefWidth="90.0">
+        <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Sino" />
+            <String fx:value="Oves" />
+            <String fx:value="Pear" />
+        </FXCollections>
+    </items>
+    </ComboBox>
+    <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="ME" text="ME"></TableColumn>
+            <TableColumn fx:id="NEL" text="NEL"></TableColumn>
+            <TableColumn fx:id="CP" text="CP"></TableColumn>
+            <TableColumn fx:id="Fiber" text="Fiber"></TableColumn>
+            <TableColumn fx:id="Sugar" text="Sugar"></TableColumn>
+            <TableColumn fx:id="Fat" text="Fat"></TableColumn>
+            <TableColumn fx:id="Ca" text="Ca"></TableColumn>
+            <TableColumn fx:id="P" text="P"></TableColumn>
+        </columns>
+    </TableView>
+
+</VBox>

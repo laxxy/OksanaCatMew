@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+
+<TabPane xmlns:fx="http://javafx.com/fxml"
+         fx:controller="com.oksana.cat.dog.oksanacatmew.MainController">
+    <tabs>
+        <Tab fx:id="mew1" text="Main calculations">
+            <fx:include fx:id="box1" source="tab1.fxml"/>
+        </Tab>
+        <Tab fx:id="mew2" text="Feed structure">
+            <fx:include fx:id="box2" source="tab2.fxml"/>
+        </Tab>
+        <Tab fx:id="mew3" text="Ration calculation">
+            <fx:include fx:id="box3" source="tab3.fxml"/>
+        </Tab>
+    </tabs>
+</TabPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<VBox fx:id="box2" alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.oksana.cat.dog.oksanacatmew.MainController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <TextField promptText="hay_straw_stable" fx:id="hay_straw_stable"/>
+    <Label fx:id="hay_straw_stable_txt"/>
+    <TextField promptText="silage_haylage_stable" fx:id="silage_haylage_stable"/>
+    <Label fx:id="silage_haylage_stable_txt"/>
+    <TextField promptText="roots_stable" fx:id="roots_stable"/>
+    <Label fx:id="roots_stable_txt"/>
+    <TextField promptText="grass_stable" fx:id="grass_stable"/>
+    <Label fx:id="grass_stable_txt"/>
+    <TextField promptText="Concentrates_stable" fx:id="Concentrates_stable"/>
+    <Label fx:id="Concentrates_stable_txt"/>
+
+    <Button text="Calculate2" onAction="#onCalculateButtonClick2"/>
+</VBox>
