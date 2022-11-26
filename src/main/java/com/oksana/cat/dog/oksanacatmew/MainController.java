@@ -8,7 +8,6 @@ import javafx.scene.control.TextField;
 public class MainController {
 
     @FXML private Label welcomeText;
-    @FXML private Label welcomeText2;
     @FXML private TextField weight;
     @FXML private TextField mp;
     @FXML private TextField mf;
@@ -44,6 +43,14 @@ public class MainController {
 
     private static int weightVal;
 
+    private static double DM;
+    private static String value = "";
+
+    private static String hay_straw_val;
+    private static String silage_haylage_val;
+    private static String roots_stable_val;
+    private static String grass_stable_val;
+    private static String Concentrates_stable_val;
 
     @FXML
     protected void onCalculateButtonClick() {
@@ -67,8 +74,6 @@ public class MainController {
         double fat_val = Double.parseDouble(fat.getText().isEmpty() ? "0.0" : fat.getText());
         double calcium_val = Double.parseDouble(calcium.getText().isEmpty() ? "0.0" : calcium.getText());
         double fosf = Double.parseDouble(phos.getText().isEmpty() ? "0.0" : phos.getText());
-
-        double DM;
 
         if (selectedItem.equals("Dry cow")) {
             DM = weightVal * val;
@@ -135,37 +140,74 @@ public class MainController {
 
     @FXML
     protected void onCalculateButtonClick2() {
-        double DM = weightVal * val;
         int hay_straw = Integer.parseInt(hay_straw_stable.getText().isEmpty() ? "0" : hay_straw_stable.getText());
         int silage_haylage = Integer.parseInt(silage_haylage_stable.getText().isEmpty() ? "0" : silage_haylage_stable.getText());
         int roots = Integer.parseInt(roots_stable.getText().isEmpty() ? "0" : roots_stable.getText());
         int grass = Integer.parseInt(grass_stable.getText().isEmpty() ? "0" : grass_stable.getText());
         int Concentrates = Integer.parseInt(Concentrates_stable.getText().isEmpty() ? "0" : Concentrates_stable.getText());
+
+        if (!value.isEmpty()) {
+            value = "";
+        }
+
         if (hay_straw != 0) {
             double w = (DM * hay_straw) / 100;
             String format = String.format("%.2f", w);
             hay_straw_stable_txt.setText(format);
+            hay_straw_val = format;
         }
         if (silage_haylage != 0) {
             double w = (DM * silage_haylage) / 100;
             String format = String.format("%.2f", w);
             silage_haylage_stable_txt.setText(format);
+            silage_haylage_val = format;
         }
         if (roots != 0) {
             double w = (DM * roots) / 100;
             String format = String.format("%.2f", w);
             roots_stable_txt.setText(format);
+            roots_stable_val = format;
         }
         if (grass != 0) {
             double w = (DM * grass) / 100;
             String format = String.format("%.2f", w);
             grass_stable_txt.setText(format);
+            grass_stable_val = format;
         }
         if (Concentrates != 0) {
             double w = (DM * Concentrates) / 100;
             String format = String.format("%.2f", w);
             Concentrates_stable_txt.setText(format);
+            Concentrates_stable_val = format;
         }
+    }
+
+    public static double getDM() {
+        return DM;
+    }
+
+    public static String getValue() {
+        return value;
+    }
+
+    public static String getHay_straw_val() {
+        return hay_straw_val;
+    }
+
+    public static String getSilage_haylage_val() {
+        return silage_haylage_val;
+    }
+
+    public static String getRoots_stable_val() {
+        return roots_stable_val;
+    }
+
+    public static String getGrass_stable_val() {
+        return grass_stable_val;
+    }
+
+    public static String getConcentrates_stable_val() {
+        return Concentrates_stable_val;
     }
 
     @FXML
