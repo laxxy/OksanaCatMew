@@ -22,10 +22,51 @@
     <ComboBox fx:id="combo" layoutX="15.0" layoutY="33.0" prefWidth="90.0">
         <items>
         <FXCollections fx:factory="observableArrayList">
-            <String fx:value="(hay-staw) Oat staw"/>
-            <String fx:value="(concentrate) Brewer's yest, dried"/>
-            <String fx:value="(silage) grass matured"/>
-            <String fx:value="(silage) Corn silage"/>
+            <String fx:value="(hays) Lucerne early-flowering"/>
+            <String fx:value="(hays) Clover red"/>
+            <String fx:value="(hays) Grass poor-quality"/>
+            <String fx:value="(hays) Grass good-quality"/>
+            <String fx:value="(straw) Oat"/>
+            <String fx:value="(straw) Oat ammoniated"/>
+            <String fx:value="(straw) Barley"/>
+            <String fx:value="(straw) Barley ammoniated"/>
+            <String fx:value="(straw) Bean"/>
+            <String fx:value="(straw) Pea"/>
+            <String fx:value="(straw) Wheat"/>
+            <String fx:value="(straw) Wheat ammoniated"/>
+            <String fx:value="(silage_haylage) Grass matured"/>
+            <String fx:value="(silage_haylage) Grass young"/>
+            <String fx:value="(silage_haylage) Corn silage"/>
+            <String fx:value="(silage_haylage) Barley whole crop"/>
+            <String fx:value="(silage_haylage) Potato"/>
+            <String fx:value="(silage_haylage) Lucerne"/>
+            <String fx:value="(concentrates) Brewer's yest dried"/>
+            <String fx:value="(concentrates) Barley"/>
+            <String fx:value="(concentrates) Barley, brewer's grains"/>
+            <String fx:value="(concentrates) Barley, malt culms"/>
+            <String fx:value="(concentrates) Grain distiller's grains"/>
+            <String fx:value="(concentrates) Grain distiller's dark grains"/>
+            <String fx:value="(concentrates) Malt distiller's grains"/>
+            <String fx:value="(concentrates) Malt distiller's dark grains"/>
+            <String fx:value="(concentrates) Maize"/>
+            <String fx:value="(concentrates) Maize flaked"/>
+            <String fx:value="(concentrates) Maize gluten feed"/>
+            <String fx:value="(concentrates) Maize gluten meal"/>
+            <String fx:value="(concentrates) Millet"/>
+            <String fx:value="(concentrates) Oats"/>
+            <String fx:value="(concentrates) Oats naked"/>
+            <String fx:value="(concentrates) Oat husks"/>
+            <String fx:value="(concentrates) Pot ale syrup"/>
+            <String fx:value="(concentrates) Rice brown"/>
+            <String fx:value="(concentrates) Rice bran (extracted)"/>
+            <String fx:value="(concentrates) Rice polished"/>
+            <String fx:value="(concentrates) Rye"/>
+            <String fx:value="(concentrates) Sorghum"/>
+            <String fx:value="(concentrates) Wheat"/>
+            <String fx:value="(concentrates) Wheat bran"/>
+            <String fx:value="(concentrates) Wheat feed"/>
+            <String fx:value="(concentrates) Wheat germ meal"/>
+
         </FXCollections>
     </items>
     </ComboBox>
