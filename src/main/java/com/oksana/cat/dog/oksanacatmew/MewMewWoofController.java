@@ -3,20 +3,29 @@ package com.oksana.cat.dog.oksanacatmew;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class MewMewWoofController {
 
     private static ArrayList<Shos> list = new ArrayList<>();
+    private static ArrayList<Shos> listTable2 = new ArrayList<>();
 
     static {
+        Shos total = new Shos();
+        Shos norm = new Shos();
+        total
+                .setFEEDS("TOTAL");
+        norm
+                .setFEEDS("NORM");
+
+        Collections.addAll(listTable2, total, norm);
+
+
         Shos shos1 = new Shos();
         shos1.setName("(hays) Lucerne early-flowering");
         shos1.setType(Type.hay_straw);
@@ -30,7 +39,7 @@ public class MewMewWoofController {
         shos1.setFat("13");
         shos1.setCa("11.3");
         shos1.setP("1.8");
-        
+
         Shos shos2 = new Shos();
         shos2.setName("(hays) Clover red");
         shos2.setType(Type.hay_straw);
@@ -44,7 +53,7 @@ public class MewMewWoofController {
         shos2.setFat("39");
         shos2.setCa("15.3");
         shos2.setP("2.5");
-        
+
         Shos shos3 = new Shos();
         shos3.setName("(hays) Grass poor-quality");
         shos3.setType(Type.hay_straw);
@@ -58,7 +67,7 @@ public class MewMewWoofController {
         shos3.setFat("16");
         shos3.setCa("2.5");
         shos3.setP("1.5");
-        
+
         Shos shos4 = new Shos();
         shos4.setName("(hays) Grass good-quality");
         shos4.setType(Type.hay_straw);
@@ -72,7 +81,7 @@ public class MewMewWoofController {
         shos4.setFat("18");
         shos4.setCa("7");
         shos4.setP("3.5");
-        
+
         Shos shos5 = new Shos();
         shos5.setName("(straw) Oat");
         shos5.setType(Type.hay_straw);
@@ -86,7 +95,7 @@ public class MewMewWoofController {
         shos5.setFat("22");
         shos5.setCa("4");
         shos5.setP("0.7");
-        
+
         Shos shos6 = new Shos();
         shos6.setName("(straw) Oat ammoniated");
         shos6.setType(Type.hay_straw);
@@ -100,7 +109,7 @@ public class MewMewWoofController {
         shos6.setFat("18");
         shos6.setCa("0");
         shos6.setP("0");
-        
+
         Shos shos7 = new Shos();
         shos7.setName("(straw) Barley");
         shos7.setType(Type.hay_straw);
@@ -114,7 +123,7 @@ public class MewMewWoofController {
         shos7.setFat("21");
         shos7.setCa("4.5");
         shos7.setP("0.7");
-        
+
         Shos shos8 = new Shos();
         shos8.setName("(straw) Barley ammoniated");
         shos8.setType(Type.hay_straw);
@@ -128,7 +137,7 @@ public class MewMewWoofController {
         shos8.setFat("15");
         shos8.setCa("0");
         shos8.setP("0");
-        
+
         Shos shos9 = new Shos();
         shos9.setName("(straw) Bean");
         shos9.setType(Type.hay_straw);
@@ -142,7 +151,7 @@ public class MewMewWoofController {
         shos9.setFat("9");
         shos9.setCa("0");
         shos9.setP("0");
-        
+
         Shos shos10 = new Shos();
         shos10.setName("(straw) Pea");
         shos10.setType(Type.hay_straw);
@@ -156,7 +165,7 @@ public class MewMewWoofController {
         shos10.setFat("19");
         shos10.setCa("0");
         shos10.setP("0");
-        
+
         Shos shos11 = new Shos();
         shos11.setName("(straw) Wheat");
         shos11.setType(Type.hay_straw);
@@ -170,7 +179,7 @@ public class MewMewWoofController {
         shos11.setFat("15");
         shos11.setCa("0");
         shos11.setP("0");
-        
+
         Shos shos12 = new Shos();
         shos12.setName("(straw) Wheat ammoniated");
         shos12.setType(Type.hay_straw);
@@ -184,8 +193,8 @@ public class MewMewWoofController {
         shos12.setFat("13");
         shos12.setCa("0");
         shos12.setP("0");
-        
-        
+
+
         Shos shos13 = new Shos();
         shos13.setName("(silage_haylage) Grass matured");
         shos13.setType(Type.silage_haylage);
@@ -199,7 +208,7 @@ public class MewMewWoofController {
         shos13.setFat("52");
         shos13.setCa("3");
         shos13.setP("2");
-        
+
         Shos shos14 = new Shos();
         shos14.setName("(silage_haylage) Grass young");
         shos14.setType(Type.silage_haylage);
@@ -213,7 +222,7 @@ public class MewMewWoofController {
         shos14.setFat("52");
         shos14.setCa("8");
         shos14.setP("4");
-        
+
         Shos shos15 = new Shos();
         shos15.setName("(silage_haylage) Corn silage");
         shos15.setType(Type.silage_haylage);
@@ -227,7 +236,7 @@ public class MewMewWoofController {
         shos15.setFat("57");
         shos15.setCa("0");
         shos15.setP("0");
-        
+
         Shos shos16 = new Shos();
         shos16.setName("(silage_haylage) Barley whole crop");
         shos16.setType(Type.silage_haylage);
@@ -241,7 +250,7 @@ public class MewMewWoofController {
         shos16.setFat("15");
         shos16.setCa("0");
         shos16.setP("0");
-        
+
         Shos shos17 = new Shos();
         shos17.setName("(silage_haylage) Potato");
         shos17.setType(Type.silage_haylage);
@@ -255,7 +264,7 @@ public class MewMewWoofController {
         shos17.setFat("19");
         shos17.setCa("0");
         shos17.setP("0");
-        
+
         Shos shos18 = new Shos();
         shos18.setName("(silage_haylage) Lucerne");
         shos18.setType(Type.silage_haylage);
@@ -269,8 +278,8 @@ public class MewMewWoofController {
         shos18.setFat("84");
         shos18.setCa("0");
         shos18.setP("0");
-        
-        
+
+
         Shos shos19 = new Shos();
         shos19.setName("(concentrates) Brewer's yest dried");
         shos19.setType(Type.Concentrates);
@@ -284,7 +293,7 @@ public class MewMewWoofController {
         shos19.setFat("11");
         shos19.setCa("3.2");
         shos19.setP("7.8");
-        
+
         Shos shos20 = new Shos();
         shos20.setName("(concentrates) Barley");
         shos20.setType(Type.Concentrates);
@@ -298,7 +307,7 @@ public class MewMewWoofController {
         shos20.setFat("17");
         shos20.setCa("0.5");
         shos20.setP("4");
-        
+
         Shos shos21 = new Shos();
         shos21.setName("(concentrates) Barley, brewer's grains");
         shos21.setType(Type.Concentrates);
@@ -312,7 +321,7 @@ public class MewMewWoofController {
         shos21.setFat("77");
         shos21.setCa("0");
         shos21.setP("0");
-        
+
         Shos shos22 = new Shos();
         shos22.setName("(concentrates) Barley, malt culms");
         shos22.setType(Type.Concentrates);
@@ -326,7 +335,7 @@ public class MewMewWoofController {
         shos22.setFat("22");
         shos22.setCa("0");
         shos22.setP("0");
-        
+
         Shos shos23 = new Shos();
         shos23.setName("(concentrates) Grain distiller's grains");
         shos23.setType(Type.Concentrates);
@@ -340,7 +349,7 @@ public class MewMewWoofController {
         shos23.setFat("65");
         shos23.setCa("0");
         shos23.setP("0");
-        
+
         Shos shos24 = new Shos();
         shos24.setName("(concentrates) Grain distiller's dark grains");
         shos24.setType(Type.Concentrates);
@@ -354,7 +363,7 @@ public class MewMewWoofController {
         shos24.setFat("108");
         shos24.setCa("0");
         shos24.setP("0");
-        
+
         Shos shos25 = new Shos();
         shos25.setName("(concentrates) Malt distiller's grains");
         shos25.setType(Type.Concentrates);
@@ -368,7 +377,7 @@ public class MewMewWoofController {
         shos25.setFat("86");
         shos25.setCa("1.7");
         shos25.setP("3.7");
-        
+
         Shos shos26 = new Shos();
         shos26.setName("(concentrates) Malt distiller's dark grains");
         shos26.setType(Type.Concentrates);
@@ -382,7 +391,7 @@ public class MewMewWoofController {
         shos26.setFat("67");
         shos26.setCa("0");
         shos26.setP("0");
-        
+
         Shos shos27 = new Shos();
         shos27.setName("(concentrates) Maize");
         shos27.setType(Type.Concentrates);
@@ -396,7 +405,7 @@ public class MewMewWoofController {
         shos27.setFat("42");
         shos27.setCa("0.3");
         shos27.setP("2.7");
-        
+
         Shos shos28 = new Shos();
         shos28.setName("(concentrates) Maize flaked");
         shos28.setType(Type.Concentrates);
@@ -410,7 +419,7 @@ public class MewMewWoofController {
         shos28.setFat("49");
         shos28.setCa("0");
         shos28.setP("0");
-        
+
         Shos shos29 = new Shos();
         shos29.setName("(concentrates) Maize gluten feed");
         shos29.setType(Type.Concentrates);
@@ -424,7 +433,7 @@ public class MewMewWoofController {
         shos29.setFat("38");
         shos29.setCa("0");
         shos29.setP("0");
-        
+
         Shos shos30 = new Shos();
         shos30.setName("(concentrates) Maize gluten meal");
         shos30.setType(Type.Concentrates);
@@ -438,7 +447,7 @@ public class MewMewWoofController {
         shos30.setFat("29");
         shos30.setCa("1.6");
         shos30.setP("5");
-        
+
         Shos shos31 = new Shos();
         shos31.setName("(concentrates) Millet");
         shos31.setType(Type.Concentrates);
@@ -452,7 +461,7 @@ public class MewMewWoofController {
         shos31.setFat("44");
         shos31.setCa("0.6");
         shos31.setP("3.1");
-        
+
         Shos shos32 = new Shos();
         shos32.setName("(concentrates) Oats");
         shos32.setType(Type.Concentrates);
@@ -466,7 +475,7 @@ public class MewMewWoofController {
         shos32.setFat("49");
         shos32.setCa("0.8");
         shos32.setP("3.7");
-        
+
         Shos shos33 = new Shos();
         shos33.setName("(concentrates) Oats naked");
         shos33.setType(Type.Concentrates);
@@ -480,7 +489,7 @@ public class MewMewWoofController {
         shos33.setFat("97");
         shos33.setCa("0");
         shos33.setP("0");
-        
+
         Shos shos34 = new Shos();
         shos34.setName("(concentrates) Oat husks");
         shos34.setType(Type.Concentrates);
@@ -494,7 +503,7 @@ public class MewMewWoofController {
         shos34.setFat("11");
         shos34.setCa("0");
         shos34.setP("0");
-        
+
         Shos shos35 = new Shos();
         shos35.setName("(concentrates) Pot ale syrup");
         shos35.setType(Type.Concentrates);
@@ -508,7 +517,7 @@ public class MewMewWoofController {
         shos35.setFat("2");
         shos35.setCa("0");
         shos35.setP("0");
-        
+
         Shos shos36 = new Shos();
         shos36.setName("(concentrates) Rice brown");
         shos36.setType(Type.Concentrates);
@@ -522,7 +531,7 @@ public class MewMewWoofController {
         shos36.setFat("23");
         shos36.setCa("0");
         shos36.setP("0");
-        
+
         Shos shos37 = new Shos();
         shos37.setName("(concentrates) Rice bran (extracted)");
         shos37.setType(Type.Concentrates);
@@ -536,7 +545,7 @@ public class MewMewWoofController {
         shos37.setFat("11");
         shos37.setCa("0");
         shos37.setP("0");
-        
+
         Shos shos38 = new Shos();
         shos38.setName("(concentrates) Rice polished");
         shos38.setType(Type.Concentrates);
@@ -550,7 +559,7 @@ public class MewMewWoofController {
         shos38.setFat("5");
         shos38.setCa("0");
         shos38.setP("0");
-        
+
         Shos shos39 = new Shos();
         shos39.setName("(concentrates) Rye");
         shos39.setType(Type.Concentrates);
@@ -564,7 +573,7 @@ public class MewMewWoofController {
         shos39.setFat("19");
         shos39.setCa("0.7");
         shos39.setP("3.7");
-        
+
         Shos shos40 = new Shos();
         shos40.setName("(concentrates) Sorghum");
         shos40.setType(Type.Concentrates);
@@ -578,7 +587,7 @@ public class MewMewWoofController {
         shos40.setFat("43");
         shos40.setCa("0.5");
         shos40.setP("3.5");
-        
+
         Shos shos41 = new Shos();
         shos41.setName("(concentrates) Wheat");
         shos41.setType(Type.Concentrates);
@@ -592,7 +601,7 @@ public class MewMewWoofController {
         shos41.setFat("19");
         shos41.setCa("0.5");
         shos41.setP("3.5");
-        
+
         Shos shos42 = new Shos();
         shos42.setName("(concentrates) Wheat bran");
         shos42.setType(Type.Concentrates);
@@ -606,7 +615,7 @@ public class MewMewWoofController {
         shos42.setFat("45");
         shos42.setCa("1.6");
         shos42.setP("13.6");
-        
+
         Shos shos43 = new Shos();
         shos43.setName("(concentrates) Wheat feed");
         shos43.setType(Type.Concentrates);
@@ -620,7 +629,7 @@ public class MewMewWoofController {
         shos43.setFat("45");
         shos43.setCa("1.1");
         shos43.setP("8");
-        
+
         Shos shos44 = new Shos();
         shos44.setName("(concentrates) Wheat germ meal");
         shos44.setType(Type.Concentrates);
@@ -682,11 +691,11 @@ public class MewMewWoofController {
     }
 
     @FXML
-    public Label text;
-    @FXML
     private ComboBox<String> combo;
     @FXML
     private TableView<Shos> tableView;
+    @FXML
+    private TableView<Shos> tableView2;
     @FXML
     private TableColumn FEEDS;
     @FXML
@@ -708,37 +717,100 @@ public class MewMewWoofController {
     @FXML
     private TableColumn P;
 
-    private List<String> collect = new ArrayList<>();
-
     @FXML
-    protected void loadData() {
-        if (!collect.isEmpty()) {
-            collect.clear();
-            text.setText("");
-        }
-        String trim = MainController.getValue().trim();
-        collect = Stream
-                .of(trim.split(" "))
-                .collect(Collectors.toList());
-        text.setText(trim);
-    }
+    private TableColumn FEEDS_TOTAL;
+    @FXML
+    private TableColumn DM_TOTAL;
+    @FXML
+    private TableColumn ME_TOTAL;
+    @FXML
+    private TableColumn NEL_TOTAL;
+    @FXML
+    private TableColumn CP_TOTAL;
+    @FXML
+    private TableColumn Fiber_TOTAL;
+    @FXML
+    private TableColumn Sugar_TOTAL;
+    @FXML
+    private TableColumn Fat_TOTAL;
+    @FXML
+    private TableColumn Ca_TOTAL;
+    @FXML
+    private TableColumn P_TOTAL;
+
+    private List<String> collect = new ArrayList<>();
 
     @FXML
     protected void deleteOnClick() {
         ObservableList<Shos> items = tableView.getItems();
         Shos selectedItem = tableView.getSelectionModel().getSelectedItem();
-        if (selectedItem != null) {
-            String feeds = selectedItem.getFEEDS();
-            List<Shos> collect = items.stream().filter(k -> k.getFEEDS().equals(feeds)).collect(Collectors.toList());
 
+        if (selectedItem != null) {
+            String feeds = feeds(selectedItem.getFEEDS());
+
+            List<Shos> collect = items.stream().filter(k -> feeds(k.getFEEDS()).equals(feeds)).collect(Collectors.toList());
             tableView.getItems().removeAll(collect);
+            calcTotal();
         }
+    }
+
+    //": nutrients in 1kg of DM"
+    private String feeds(String feeds) {
+        if (feeds.contains(":")) {
+            return feeds.split(":")[0];
+        }
+        return feeds;
+    }
+
+    @FXML
+    protected void clear() {
+        tableView.getItems().clear();
+        tableView2.getItems().clear();
     }
 
     @FXML
     protected void calcOnClick() {
+        //tableView2
+        if (tableView2.getItems().size() == 0) {
+
+            FEEDS_TOTAL.setCellValueFactory(new PropertyValueFactory<>("FEEDS"));
+            DM_TOTAL.setCellValueFactory(new PropertyValueFactory<>("DM"));
+            ME_TOTAL.setCellValueFactory(new PropertyValueFactory<>("ME"));
+            NEL_TOTAL.setCellValueFactory(new PropertyValueFactory<>("NEL"));
+            CP_TOTAL.setCellValueFactory(new PropertyValueFactory<>("CP"));
+            Fiber_TOTAL.setCellValueFactory(new PropertyValueFactory<>("Fiber"));
+            Sugar_TOTAL.setCellValueFactory(new PropertyValueFactory<>("Sugar"));
+            Fat_TOTAL.setCellValueFactory(new PropertyValueFactory<>("Fat"));
+            Ca_TOTAL.setCellValueFactory(new PropertyValueFactory<>("Ca"));
+            P_TOTAL.setCellValueFactory(new PropertyValueFactory<>("P"));
+            ObservableList<Shos> items1 = tableView2.getItems();
+
+            double hs = MainController.getHay_straw_val() == null ? 0 : Double.parseDouble(MainController.getHay_straw_val());
+            double cn = MainController.getConcentrates_stable_val() == null ? 0 : Double.parseDouble(MainController.getConcentrates_stable_val());
+            double gs = MainController.getGrass_stable_val() == null ? 0 : Double.parseDouble(MainController.getGrass_stable_val());
+            double rt = MainController.getRoots_stable_val() == null ? 0 : Double.parseDouble(MainController.getRoots_stable_val());
+            double sl = MainController.getSilage_haylage_val() == null ? 0 : Double.parseDouble(MainController.getSilage_haylage_val());
+
+            double p = hs + cn + gs + rt + sl;
+            Shos shos = new Shos();
+            shos.setFEEDS("NORM");
+
+            shos.setDM((String.format("%.2f", p)));
+            shos.setNEL((String.format("%.2f", MainController.getNEL_total())));
+            shos.setCP((String.format("%.2f", MainController.getCp())));
+            shos.setFiber((String.format("%.2f", MainController.getCrude_fibers())));
+            shos.setSugar((String.format("%.2f", MainController.getSugar_result())));
+            shos.setFat((String.format("%.2f", MainController.getFat_result())));
+            shos.setCa((String.format("%.2f", MainController.getCalcium_result())));
+            shos.setP((String.format("%.2f", MainController.getFosf_result())));
+
+            items1.addAll(listTable2.get(0), shos);
+            tableView2.setItems(items1);
+        }
+
         String selectedItem = combo.getSelectionModel().getSelectedItem();
         Shos shos = list.stream().filter(k -> k.getName().equals(selectedItem)).findAny().get();
+        shos.setFEEDS(shos.getFEEDS() + ": nutrients in 1kg of DM");
 
         FEEDS.setCellValueFactory(new PropertyValueFactory<>("FEEDS"));
         DM.setCellValueFactory(new PropertyValueFactory<>("DM"));
@@ -756,8 +828,6 @@ public class MewMewWoofController {
 
         Shos shos2 = new Shos();
         double w = Double.parseDouble(type);
-        System.out.println(shos.getType());
-        System.out.println(w);
         shos2.setFEEDS(selectedItem);
         shos2.setDM(type);
         shos2.setME("");
@@ -772,6 +842,8 @@ public class MewMewWoofController {
         ObservableList<Shos> items = tableView.getItems();
         items.addAll(shos, shos2);
         tableView.setItems(items);
+
+        calcTotal();
     }
 
     private String switchType(Type type) {
@@ -904,5 +976,38 @@ public class MewMewWoofController {
         public void setName(String name) {
             this.name = name;
         }
+    }
+
+    private void calcTotal() {
+        ObservableList<Shos> items = tableView.getItems();
+        ObservableList<Shos> items1 = tableView2.getItems();
+
+        Shos tmp = new Shos();
+
+        tmp
+                .setDM("0")
+                .setNEL("0")
+                .setCP("0")
+                .setFiber("0")
+                .setSugar("0")
+                .setFat("0")
+                .setCa("0")
+                .setP("0");
+
+        items.stream()
+                .filter(k -> k.getME().isEmpty())
+                .forEach(k -> {
+                    tmp.setDM(String.format("%.2f", Double.parseDouble(tmp.getDM()) + Double.parseDouble(k.getDM())));
+                    tmp.setNEL(String.format("%.2f", Double.parseDouble(tmp.getNEL()) + Double.parseDouble(k.getNEL())));
+                    tmp.setCP(String.format("%.2f", Double.parseDouble(tmp.getCP()) + Double.parseDouble(k.getCP())));
+                    tmp.setFiber(String.format("%.2f", Double.parseDouble(tmp.getFiber()) + Double.parseDouble(k.getFiber())));
+                    tmp.setSugar(String.format("%.2f", Double.parseDouble(tmp.getSugar()) + Double.parseDouble(k.getSugar())));
+                    tmp.setFat(String.format("%.2f", Double.parseDouble(tmp.getFat()) + Double.parseDouble(k.getFat())));
+                    tmp.setCa(String.format("%.2f", Double.parseDouble(tmp.getCa()) + Double.parseDouble(k.getCa())));
+                    tmp.setP(String.format("%.2f", Double.parseDouble(tmp.getP()) + Double.parseDouble(k.getP())));
+                });
+
+        tmp.setFEEDS("TOTAL");
+        items1.set(0, tmp);
     }
 }

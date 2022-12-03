@@ -71,9 +71,10 @@
     </items>
     </ComboBox>
     <Button text="add row" onAction="#calcOnClick"/>
+    <Button text="clear table" onAction="#clear"/>
     <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1">
         <columns>
-            <TableColumn fx:id="FEEDS" text="FEEDS" />
+            <TableColumn fx:id="FEEDS" text="FEEDS" minWidth="300"/>
             <TableColumn fx:id="DM" text="DM,Kg" />
             <TableColumn fx:id="ME" text="ME,MJ" />
             <TableColumn fx:id="NEL" text="NEL=60%ME" />
@@ -83,6 +84,20 @@
             <TableColumn fx:id="Fat" text="Fat,g" />
             <TableColumn fx:id="Ca" text="Ca,g" />
             <TableColumn fx:id="P" text="P,g" />
+        </columns>
+    </TableView>
+    <TableView fx:id="tableView2" GridPane.columnIndex="0" GridPane.rowIndex="1" maxHeight="120">
+        <columns>
+            <TableColumn fx:id="FEEDS_TOTAL"  minWidth="300"/>
+            <TableColumn fx:id="DM_TOTAL"/>
+            <TableColumn fx:id="ME_TOTAL" />
+            <TableColumn fx:id="NEL_TOTAL" />
+            <TableColumn fx:id="CP_TOTAL" />
+            <TableColumn fx:id="Fiber_TOTAL" />
+            <TableColumn fx:id="Sugar_TOTAL" />
+            <TableColumn fx:id="Fat_TOTAL" />
+            <TableColumn fx:id="Ca_TOTAL" />
+            <TableColumn fx:id="P_TOTAL" />
         </columns>
     </TableView>
     <Button text="delete row" onAction="#deleteOnClick"/>

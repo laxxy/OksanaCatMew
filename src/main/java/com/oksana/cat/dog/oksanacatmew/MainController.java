@@ -46,6 +46,14 @@ public class MainController {
     private static double DM;
     private static String value = "";
 
+    private static double NEL_total;
+    private static double CP_ = 0;
+    private static double crude_fibers;
+    private static double sugar_result;
+    private static double fat_result;
+    private static double calcium_result;
+    private static double fosf_result;
+
     private static String hay_straw_val;
     private static String silage_haylage_val;
     private static String roots_stable_val;
@@ -83,7 +91,6 @@ public class MainController {
 
         double NEL_vital = dry2 * Math.round(Math.pow(weightVal, 0.75));
 
-        double NEL_total;
         double NEL_MS = 0;
         if (selectedItem.equals("Dry cow")) {
             NEL_total = NEL_featus_val + NEL_vital;
@@ -99,17 +106,19 @@ public class MainController {
         double CP_TOTAL = 0;
         if (selectedItem.equals("Dry cow")) {
             CP = protein_val * DM;
+            CP_ = CP;
         } else {
             CP_VITAL = 3.4 * Math.round(Math.pow(weightVal, 0.75));
             CP_MS = (mpt_val * 10 * 2.1) * mp_val;
             CP_TOTAL = CP_VITAL + CP_MS;
+            CP_ = CP_TOTAL;
         }
 
-        double crude_fibers = fibers_val * DM;
-        double sugar_result = sugar_val * DM;
-        double fat_result = fat_val * DM;
-        double calcium_result = calcium_val * DM;
-        double fosf_result = fosf * DM;
+        crude_fibers = fibers_val * DM;
+        sugar_result = sugar_val * DM;
+        fat_result = fat_val * DM;
+        calcium_result = calcium_val * DM;
+        fosf_result = fosf * DM;
 
         if (selectedItem.equals("Dry cow")) {
             welcomeText.setText("DM = " + String.format("%.2f", DM) + "; NEL_vital = "
@@ -210,8 +219,31 @@ public class MainController {
         return Concentrates_stable_val;
     }
 
-    @FXML
-    protected void onClearInputButtonClick() {
-        weight.clear();
+    public static double getNEL_total() {
+        return NEL_total;
+    }
+
+    public static double getCp() {
+        return CP_;
+    }
+
+    public static double getCrude_fibers() {
+        return crude_fibers;
+    }
+
+    public static double getSugar_result() {
+        return sugar_result;
+    }
+
+    public static double getFat_result() {
+        return fat_result;
+    }
+
+    public static double getCalcium_result() {
+        return calcium_result;
+    }
+
+    public static double getFosf_result() {
+        return fosf_result;
     }
 }
