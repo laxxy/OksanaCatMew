@@ -24,11 +24,21 @@ public class MainController {
     @FXML private TextField roots_stable;
     @FXML private TextField grass_stable;
     @FXML private TextField Concentrates_stable;
+    @FXML private TextField hay_straw_stable1;
+    @FXML private TextField silage_haylage_stable1;
+    @FXML private TextField roots_stable1;
+    @FXML private TextField grass_stable1;
+    @FXML private TextField Concentrates_stable1;
     @FXML private Label hay_straw_stable_txt;
     @FXML private Label silage_haylage_stable_txt;
     @FXML private Label roots_stable_txt;
     @FXML private Label grass_stable_txt;
     @FXML private Label Concentrates_stable_txt;
+    @FXML private Label hay_straw_stable_txt1;
+    @FXML private Label silage_haylage_stable_txt1;
+    @FXML private Label roots_stable_txt1;
+    @FXML private Label grass_stable_txt1;
+    @FXML private Label Concentrates_stable_txt1;
     @FXML private ComboBox<String> comboCow;
 
 
@@ -59,6 +69,12 @@ public class MainController {
     private static String roots_stable_val;
     private static String grass_stable_val;
     private static String Concentrates_stable_val;
+
+    private static String hay_straw_val1;
+    private static String silage_haylage_val1;
+    private static String roots_stable_val1;
+    private static String grass_stable_val1;
+    private static String Concentrates_stable_val1;
 
     @FXML
     protected void onCalculateButtonClick() {
@@ -155,6 +171,12 @@ public class MainController {
         int grass = Integer.parseInt(grass_stable.getText().isEmpty() ? "0" : grass_stable.getText());
         int Concentrates = Integer.parseInt(Concentrates_stable.getText().isEmpty() ? "0" : Concentrates_stable.getText());
 
+        int hay_straw1 = Integer.parseInt(hay_straw_stable1.getText().isEmpty() ? "0" : hay_straw_stable1.getText());
+        int silage_haylage1 = Integer.parseInt(silage_haylage_stable1.getText().isEmpty() ? "0" : silage_haylage_stable1.getText());
+        int roots1 = Integer.parseInt(roots_stable1.getText().isEmpty() ? "0" : roots_stable1.getText());
+        int grass1 = Integer.parseInt(grass_stable1.getText().isEmpty() ? "0" : grass_stable1.getText());
+        int Concentrates1 = Integer.parseInt(Concentrates_stable1.getText().isEmpty() ? "0" : Concentrates_stable1.getText());
+
         if (!value.isEmpty()) {
             value = "";
         }
@@ -188,6 +210,37 @@ public class MainController {
             String format = String.format("%.2f", w);
             Concentrates_stable_txt.setText(format);
             Concentrates_stable_val = format;
+        }
+
+        if (hay_straw1 != 0) {
+            double w = (DM * hay_straw1) / 100;
+            String format = String.format("%.2f", w);
+            hay_straw_stable_txt1.setText(format);
+            hay_straw_val1 = format;
+        }
+        if (silage_haylage1 != 0) {
+            double w = (DM * silage_haylage1) / 100;
+            String format = String.format("%.2f", w);
+            silage_haylage_stable_txt1.setText(format);
+            silage_haylage_val1 = format;
+        }
+        if (roots1 != 0) {
+            double w = (DM * roots1) / 100;
+            String format = String.format("%.2f", w);
+            roots_stable_txt1.setText(format);
+            roots_stable_val1 = format;
+        }
+        if (grass1 != 0) {
+            double w = (DM * grass1) / 100;
+            String format = String.format("%.2f", w);
+            grass_stable_txt1.setText(format);
+            grass_stable_val1 = format;
+        }
+        if (Concentrates1 != 0) {
+            double w = (DM * Concentrates1) / 100;
+            String format = String.format("%.2f", w);
+            Concentrates_stable_txt1.setText(format);
+            Concentrates_stable_val1 = format;
         }
     }
 
@@ -245,5 +298,25 @@ public class MainController {
 
     public static double getFosf_result() {
         return fosf_result;
+    }
+
+    public static String getHay_straw_val1() {
+        return hay_straw_val1;
+    }
+
+    public static String getSilage_haylage_val1() {
+        return silage_haylage_val1;
+    }
+
+    public static String getRoots_stable_val1() {
+        return roots_stable_val1;
+    }
+
+    public static String getGrass_stable_val1() {
+        return grass_stable_val1;
+    }
+
+    public static String getConcentrates_stable_val1() {
+        return Concentrates_stable_val1;
     }
 }

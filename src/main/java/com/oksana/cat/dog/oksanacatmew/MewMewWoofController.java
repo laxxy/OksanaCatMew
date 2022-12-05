@@ -1,5 +1,6 @@
 package com.oksana.cat.dog.oksanacatmew;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -690,55 +691,32 @@ public class MewMewWoofController {
         list.add(shos44);
     }
 
-    @FXML
-    private ComboBox<String> combo;
-    @FXML
-    private TableView<Shos> tableView;
-    @FXML
-    private TableView<Shos> tableView2;
-    @FXML
-    private TableColumn FEEDS;
-    @FXML
-    private TableColumn DM;
-    @FXML
-    private TableColumn ME;
-    @FXML
-    private TableColumn NEL;
-    @FXML
-    private TableColumn CP;
-    @FXML
-    private TableColumn Fiber;
-    @FXML
-    private TableColumn Sugar;
-    @FXML
-    private TableColumn Fat;
-    @FXML
-    private TableColumn Ca;
-    @FXML
-    private TableColumn P;
+    @FXML private ComboBox<String> combo;
+    @FXML private ComboBox<String> combo2;
+    @FXML private TableView<Shos> tableView;
+    @FXML private TableView<Shos> tableView2;
+    @FXML private TableColumn FEEDS;
+    @FXML private TableColumn DM;
+    @FXML private TableColumn ME;
+    @FXML private TableColumn NEL;
+    @FXML private TableColumn CP;
+    @FXML private TableColumn Fiber;
+    @FXML private TableColumn Sugar;
+    @FXML private TableColumn Fat;
+    @FXML private TableColumn Ca;
+    @FXML private TableColumn P;
+    @FXML private TableColumn FEEDS_TOTAL;
+    @FXML private TableColumn DM_TOTAL;
+    @FXML private TableColumn ME_TOTAL;
+    @FXML private TableColumn NEL_TOTAL;
+    @FXML private TableColumn CP_TOTAL;
+    @FXML private TableColumn Fiber_TOTAL;
+    @FXML private TableColumn Sugar_TOTAL;
+    @FXML private TableColumn Fat_TOTAL;
+    @FXML private TableColumn Ca_TOTAL;
+    @FXML private TableColumn P_TOTAL;
 
-    @FXML
-    private TableColumn FEEDS_TOTAL;
-    @FXML
-    private TableColumn DM_TOTAL;
-    @FXML
-    private TableColumn ME_TOTAL;
-    @FXML
-    private TableColumn NEL_TOTAL;
-    @FXML
-    private TableColumn CP_TOTAL;
-    @FXML
-    private TableColumn Fiber_TOTAL;
-    @FXML
-    private TableColumn Sugar_TOTAL;
-    @FXML
-    private TableColumn Fat_TOTAL;
-    @FXML
-    private TableColumn Ca_TOTAL;
-    @FXML
-    private TableColumn P_TOTAL;
-
-    private List<String> collect = new ArrayList<>();
+    private static String selected = "";
 
     @FXML
     protected void deleteOnClick() {
@@ -769,6 +747,54 @@ public class MewMewWoofController {
     }
 
     @FXML
+    protected void select() {
+        selected = combo2.getSelectionModel().getSelectedItem();
+    }
+
+    @FXML
+    protected void load() {
+        ObservableList<String> items = FXCollections.observableArrayList();
+        List<String> list = new ArrayList<>();
+        Collections.addAll(list,
+                "Hay_straw1: " + MainController.getHay_straw_val(),
+                "Silage_haylage1: " + MainController.getSilage_haylage_val(),
+                "Roots1: " + MainController.getRoots_stable_val(),
+                "Grass1: " + MainController.getGrass_stable_val(),
+                "Concentrates1: " + MainController.getConcentrates_stable_val(),
+                "Hay_straw2: " + MainController.getHay_straw_val1(),
+                "Silage_haylage2: " + MainController.getSilage_haylage_val1(),
+                "Roots2: " + MainController.getRoots_stable_val1(),
+                "Grass2: " + MainController.getGrass_stable_val1(),
+                "Concentrates2: " + MainController.getConcentrates_stable_val1()
+                );
+
+        String selectedItem = combo.getSelectionModel().getSelectedItem();
+        Shos shos = MewMewWoofController.list.stream().filter(k -> k.getName().equals(selectedItem)).findAny().get();
+
+        list.stream().filter(k -> {
+            String[] split = k.split(":");
+            return !split[1].trim().equals("null");
+        } )
+                .filter(k -> {
+                    if (shos.getType().equals(Type.hay_straw)) {
+                        return k.startsWith("Hay_straw");
+                    } else if (shos.getType().equals(Type.silage_haylage)) {
+                        return k.startsWith("Silage_haylage");
+                    }else if (shos.getType().equals(Type.roots)) {
+                        return k.startsWith("Roots");
+                    }else if (shos.getType().equals(Type.grass)) {
+                        return k.startsWith("Grass");
+                    }else if (shos.getType().equals(Type.Concentrates)) {
+                        return k.startsWith("Concentrates");
+                    }
+                    return false;
+                })
+                .forEach(items::add);
+
+        combo2.setItems(items);
+    }
+
+    @FXML
     protected void calcOnClick() {
         //tableView2
         if (tableView2.getItems().size() == 0) {
@@ -790,8 +816,13 @@ public class MewMewWoofController {
             double gs = MainController.getGrass_stable_val() == null ? 0 : Double.parseDouble(MainController.getGrass_stable_val());
             double rt = MainController.getRoots_stable_val() == null ? 0 : Double.parseDouble(MainController.getRoots_stable_val());
             double sl = MainController.getSilage_haylage_val() == null ? 0 : Double.parseDouble(MainController.getSilage_haylage_val());
+            double hs1 = MainController.getHay_straw_val1() == null ? 0 : Double.parseDouble(MainController.getHay_straw_val1());
+            double cn1 = MainController.getConcentrates_stable_val1() == null ? 0 : Double.parseDouble(MainController.getConcentrates_stable_val1());
+            double gs1 = MainController.getGrass_stable_val1() == null ? 0 : Double.parseDouble(MainController.getGrass_stable_val1());
+            double rt1 = MainController.getRoots_stable_val1() == null ? 0 : Double.parseDouble(MainController.getRoots_stable_val1());
+            double sl1 = MainController.getSilage_haylage_val1() == null ? 0 : Double.parseDouble(MainController.getSilage_haylage_val1());
 
-            double p = hs + cn + gs + rt + sl;
+            double p = hs + cn + gs + rt + sl + hs1 + cn1 + gs1 + rt1 + sl1;
             Shos shos = new Shos();
             shos.setFEEDS("NORM");
 
@@ -823,13 +854,12 @@ public class MewMewWoofController {
         Ca.setCellValueFactory(new PropertyValueFactory<>("Ca"));
         P.setCellValueFactory(new PropertyValueFactory<>("P"));
 
-
-        String type = switchType(shos.getType());
+        String trim = selected.split(":")[1].trim();
 
         Shos shos2 = new Shos();
-        double w = Double.parseDouble(type);
+        double w = Double.parseDouble(trim);
         shos2.setFEEDS(selectedItem);
-        shos2.setDM(type);
+        shos2.setDM(trim);
         shos2.setME("");
         shos2.setNEL(String.format("%.2f", w * Double.parseDouble(shos.getNEL())));
         shos2.setCP(String.format("%.2f", w * Double.parseDouble(shos.getCP())));

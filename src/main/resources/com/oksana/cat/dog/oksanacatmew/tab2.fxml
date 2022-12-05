@@ -1,27 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.*?>
-
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<VBox fx:id="box2" alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.oksana.cat.dog.oksanacatmew.MainController">
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="box2" alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="481.0" prefWidth="336.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.oksana.cat.dog.oksanacatmew.MainController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
+   <ToolBar prefHeight="11.0" prefWidth="273.0">
+      <items>
+      
+          <TextField fx:id="hay_straw_stable" prefHeight="26.0" prefWidth="122.0" promptText="hay_straw %" />
+         <TextField fx:id="hay_straw_stable1" prefHeight="26.0" prefWidth="122.0" promptText="hay_straw %" />
+      </items>
+   </ToolBar>
+   <ToolBar prefHeight="23.0" prefWidth="296.0">
+      <items>
+          <Label fx:id="hay_straw_stable_txt" prefHeight="17.0" prefWidth="122.0" />
+         <Label fx:id="hay_straw_stable_txt1" prefHeight="17.0" prefWidth="97.0" />
+      </items>
+   </ToolBar>
+   <ToolBar prefHeight="75.0" prefWidth="296.0">
+      <items>
+          <TextField fx:id="silage_haylage_stable" prefHeight="26.0" prefWidth="121.0" promptText="silage_haylage %" />
+         <TextField fx:id="silage_haylage_stable1" prefHeight="26.0" prefWidth="121.0" promptText="silage_haylage %" />
+      </items>
+   </ToolBar>
+   <ToolBar>
+      <items>
+          <Label fx:id="silage_haylage_stable_txt" prefHeight="17.0" prefWidth="119.0" />
+         <Label fx:id="silage_haylage_stable_txt1" prefHeight="17.0" prefWidth="125.0" />
+      </items>
+   </ToolBar>
+   <ToolBar>
+      <items>
+          <TextField fx:id="roots_stable" prefHeight="26.0" prefWidth="122.0" promptText="roots %" />
+         <TextField fx:id="roots_stable1" prefHeight="26.0" prefWidth="122.0" promptText="roots %" />
+      </items>
+   </ToolBar>
+   <ToolBar>
+      <items>
+          <Label fx:id="roots_stable_txt" prefHeight="17.0" prefWidth="121.0" />
+         <Label fx:id="roots_stable_txt1" prefHeight="17.0" prefWidth="121.0" />
+      </items>
+   </ToolBar>
+   <ToolBar>
+      <items>
+          <TextField fx:id="grass_stable" prefHeight="26.0" prefWidth="123.0" promptText="grass %" />
+         <TextField fx:id="grass_stable1" prefHeight="26.0" prefWidth="123.0" promptText="grass %" />
+      </items>
+   </ToolBar>
+   <ToolBar>
+      <items>
+          <Label fx:id="grass_stable_txt" prefHeight="17.0" prefWidth="121.0" />
+         <Label fx:id="grass_stable_txt1" prefHeight="17.0" prefWidth="121.0" />
+      </items>
+   </ToolBar>
+   <ToolBar>
+      <items>
+          <TextField fx:id="Concentrates_stable" prefHeight="26.0" prefWidth="131.0" promptText="Concentrates %" />
+         <TextField fx:id="Concentrates_stable1" prefHeight="26.0" prefWidth="132.0" promptText="Concentrates %" />
+      </items>
+   </ToolBar>
+   <ToolBar>
+      <items>
+          <Label fx:id="Concentrates_stable_txt" prefHeight="17.0" prefWidth="131.0" />
+         <Label fx:id="Concentrates_stable_txt1" prefHeight="17.0" prefWidth="131.0" />
+      </items>
+   </ToolBar>
 
-    <TextField promptText="hay_straw_stable" fx:id="hay_straw_stable"/>
-    <Label fx:id="hay_straw_stable_txt"/>
-    <TextField promptText="silage_haylage_stable" fx:id="silage_haylage_stable"/>
-    <Label fx:id="silage_haylage_stable_txt"/>
-    <TextField promptText="roots_stable" fx:id="roots_stable"/>
-    <Label fx:id="roots_stable_txt"/>
-    <TextField promptText="grass_stable" fx:id="grass_stable"/>
-    <Label fx:id="grass_stable_txt"/>
-    <TextField promptText="Concentrates_stable" fx:id="Concentrates_stable"/>
-    <Label fx:id="Concentrates_stable_txt"/>
-
-    <Button text="Calculate2" onAction="#onCalculateButtonClick2"/>
+    <Button onAction="#onCalculateButtonClick2" text="Calculate2" />
 </VBox>

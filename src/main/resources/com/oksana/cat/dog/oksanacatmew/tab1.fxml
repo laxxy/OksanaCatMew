@@ -7,15 +7,24 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox fx:id="box1" prefHeight="692.0" prefWidth="514.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oksana.cat.dog.oksanacatmew.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <Label fx:id="welcomeText"  />
-    <Label fx:id="welcomeText2" />
-    <ComboBox fx:id="comboCow" layoutX="15.0" layoutY="33.0" prefWidth="90.0">
+   <VBox prefHeight="90.0" prefWidth="317.0">
+      <children>
+          <Label fx:id="welcomeText">
+            <font>
+               <Font size="18.0" />
+            </font></Label>
+      </children>
+   </VBox>
+    <ComboBox fx:id="comboCow" layoutX="15.0" layoutY="33.0" prefHeight="26.0" prefWidth="151.0">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Dry cow" />
@@ -23,17 +32,39 @@
             </FXCollections>
         </items>
     </ComboBox>
-
-    <TextField fx:id="weight" prefHeight="26.0" prefWidth="75.0" promptText="weight" />
-    <TextField fx:id="NEL_featus" prefHeight="26.0" prefWidth="146.0" promptText="NEL_featus (Dry cow only)" />
-    <TextField fx:id="protein" prefHeight="26.0" prefWidth="169.0" promptText="crude protein (Dry cow only)" />
-    <TextField fx:id="fibers" prefHeight="26.0" prefWidth="212.0" promptText="fibers" />
-    <TextField fx:id="sugar" promptText="sugar" />
-    <TextField fx:id="fat" promptText="fat" />
-    <TextField fx:id="calcium" promptText="calcium" />
-    <TextField fx:id="phos" promptText="phos" />
-    <TextField fx:id="mp" promptText="milk production (Lactating cow only)" />
-    <TextField fx:id="mf" promptText="milk fat (Lactating cow only)" />
-    <TextField fx:id="mpt" promptText="milk protein (Lactating cow only)" />
+   <ToolBar prefHeight="36.0" prefWidth="474.0">
+      <items>
+      
+                <TextField fx:id="weight" prefHeight="26.0" prefWidth="75.0" promptText="weight" />
+          <TextField fx:id="NEL_featus" prefHeight="26.0" prefWidth="168.0" promptText="NEL_featus (Dry cow only)" />
+          <TextField fx:id="protein" prefHeight="26.0" prefWidth="169.0" promptText="crude protein (Dry cow only)" />
+      </items>
+   </ToolBar>
+   <ToolBar>
+      <items>
+          <TextField fx:id="fibers" prefHeight="26.0" prefWidth="92.0" promptText="fibers" />
+          <TextField fx:id="sugar" prefHeight="26.0" prefWidth="88.0" promptText="sugar" />
+          <TextField fx:id="fat" prefHeight="26.0" prefWidth="102.0" promptText="fat" />
+      </items>
+   </ToolBar>
+   <ToolBar>
+      <items>
+          <TextField fx:id="calcium" prefHeight="26.0" prefWidth="109.0" promptText="calcium" />
+          <TextField fx:id="phos" prefHeight="26.0" prefWidth="126.0" promptText="phos" />
+      </items>
+   </ToolBar>
+   <HBox>
+      <children>
+         <HBox>
+            <children>
+                <TextField fx:id="mp" prefHeight="26.0" prefWidth="304.0" promptText="milk production (Lactating cow only)" />
+            </children>
+         </HBox>
+          <TextField fx:id="mf" prefHeight="26.0" prefWidth="281.0" promptText="milk fat (Lactating cow only)" />
+          <TextField fx:id="mpt" prefHeight="26.0" prefWidth="220.0" promptText="milk protein (Lactating cow only)" />
+      </children>
+   </HBox>
+   <HBox />
+   <HBox />
     <Button onAction="#onCalculateButtonClick" text="Calculate" />
 </VBox>
