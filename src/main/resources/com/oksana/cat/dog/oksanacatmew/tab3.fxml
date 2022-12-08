@@ -65,7 +65,31 @@
                       <String fx:value="(concentrates) Wheat bran" />
                       <String fx:value="(concentrates) Wheat feed" />
                       <String fx:value="(concentrates) Wheat germ meal" />
-      
+                      <String fx:value="(grass) Barley in flower" />
+                      <String fx:value="(grass) Cabbage" />
+                      <String fx:value="(grass) Clover red early flowering" />
+                      <String fx:value="(grass) Clower white early flowering" />
+                      <String fx:value="(grass) Grass young 75 80D" />
+                      <String fx:value="(grass) Grass mature 60 65D" />
+                      <String fx:value="(grass) Kale" />
+                      <String fx:value="(grass) Lucerne early flowering" />
+                      <String fx:value="(grass) Maize" />
+                      <String fx:value="(grass) Rape" />
+                      <String fx:value="(grass) Sugar beet tops" />
+                      <String fx:value="(grass) Sugarcane" />
+                      <String fx:value="(grass) Swede tops" />
+                      <String fx:value="(roots) Artichoke Jerusalem" />
+                      <String fx:value="(roots) Cassava" />
+                      <String fx:value="(roots) Fodder beet" />
+                      <String fx:value="(roots) Mangels" />
+                      <String fx:value="(roots) Potatoes" />
+                      <String fx:value="(roots) Sugar beet palp dried" />
+                      <String fx:value="(roots) Sugar beet palp dried molassed" />
+                      <String fx:value="(roots) Sugar beet molasses" />
+                      <String fx:value="(roots) Sugarcane molasses" />
+                      <String fx:value="(roots) Swedes" />
+                      <String fx:value="(roots) Sweet potatoes" />
+                      <String fx:value="(roots) Turnips" />
                   </FXCollections>
               </items>
           </ComboBox>
